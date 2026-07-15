@@ -1,42 +1,44 @@
-# TAQA Distribution — Business Overview replica
+# Quality Team — Power Technical Support portal
 
-Static, self-contained replica of
-`https://taqadistribution.com/addc/en-us/business/overview`
-captured on 2026-07-15. Desktop rendering is 99.96% pixel-identical to the
-live page (verified by automated screenshot diff); the only difference is the
-removed third-party floating accessibility widget.
+Internal portal for the Quality Team (Power Technical Support), styled with the
+TAQA Distribution brand. Static site, hosted on GitHub Pages.
 
-## Run it
+**Live:** https://hamad21.github.io/taqa-prototype/
 
-```
-python -m http.server 8123 --directory taqa-replica
-```
+## Sections
 
-then open http://localhost:8123/ — or use the `taqa-replica` entry in
-`.claude/launch.json`. Serving from this folder as web root is required
-because asset paths are absolute (`/_next/...`, `/assets/...`).
+- **Inspection & quality checklists** — downloadable Word (`.docx`) checklists, each with a reference number and last-updated date.
+- **Quality Awareness Corner** — downloadable good-practice PDFs.
+- **Jointing in Weather Conditions** — a dedicated guidance page (`jointing-weather-conditions.html`) plus a printable field-guide PDF.
+- **Quality Team contacts** — team emails and a general Quality Team inbox.
 
-## What's inside
+## Structure
 
 | Path | Purpose |
 |---|---|
-| `index.html` | Hydrated DOM snapshot of the live page (scripts stripped) |
-| `_next/`, `assets/`, `favicon.ico` | All CSS/images/fonts mirrored from the site |
-| `carousel.js` | Small vanilla script re-implementing the announcements + features carousels and mobile overflow fixes (the originals were React-driven) |
-| `capture.js` | Tool: dumps JS-rendered DOM + full-page PNG of any URL via headless Edge (CDP, no npm deps). `node capture.js <url> <outPrefix> [width]` |
-| `localize.js` | Tool: downloads all same-origin assets referenced by `original.html` and mirrors them locally |
-| `qa/` | Reference screenshots + diff mask used to verify fidelity |
+| `index.html` | Portal landing page |
+| `jointing-weather-conditions.html` | Jointing-in-weather guidance page |
+| `assets/styles.css` | Design system (TAQA colours, Roboto type) |
+| `assets/logo-dark.svg`, `assets/logo-white.png` | TAQA logo |
+| `documents/checklists/*.docx` | Inspection checklists |
+| `documents/awareness/*.pdf` | Awareness Corner PDFs |
+| `gen_checklists.py`, `gen_pdfs.js` | Generators used to produce the downloadable documents |
 
-## Intentionally removed vs the live site
+## Document register
 
-- Next.js runtime (page is a static snapshot; nav links point at the live-site paths)
-- OneTrust cookie banner, Google Tag Manager / Analytics, accessibility widget
-- Google Fonts still loads from `fonts.googleapis.com` (only external dependency)
+| Ref. | Title | Type | Last updated |
+|---|---|---|---|
+| QT-PTS-CHK-001 | LV & MV Cable Jointing Inspection Checklist | Word | 08 Jul 2026 |
+| QT-PTS-CHK-002 | Cable Laying & Backfilling Inspection Checklist | Word | 24 Jun 2026 |
+| QT-PTS-CHK-003 | Jointing in Adverse Weather — Pre-Work Checklist | Word | 12 Jul 2026 |
+| QT-PTS-CHK-004 | Substation Cable Termination Quality Checklist | Word | 02 Jul 2026 |
+| QT-PTS-QA-001 | Common Jointing Defects & How to Avoid Them | PDF | 05 Jul 2026 |
+| QT-PTS-QA-002 | Workmanship Standards for Cable Accessories | PDF | 28 Jun 2026 |
+| QT-PTS-QA-003 | Jointing in Weather Conditions — Field Guide | PDF | 12 Jul 2026 |
 
-## Known limitations
+## Notes
 
-- Header dropdowns (Help & Support / Locations), search and login are static —
-  the menus' content was never in the captured DOM (React rendered them on click).
-- Mobile (<768px) is usable and scroll-clean, but the footer stacks slightly
-  differently than the live site, which swaps in a different mobile footer
-  component at runtime.
+- Contact emails and names are **placeholders** (`*@taqa.example`) — replace with the team's real details.
+- Document content is general Quality Team good-practice; it does not replace manufacturer instructions or the project specification.
+- Editing: change files here, then `git commit` and `git push` — GitHub Pages rebuilds automatically.
+- To regenerate the documents: `python gen_checklists.py` and `node gen_pdfs.js`.
