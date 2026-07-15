@@ -68,7 +68,7 @@ const docs = [
       ],
     },
     controls: ['Erect and seal a jointing enclosure before opening any joint.', 'Keep surfaces clean and dry; warm or dehumidify where needed.', 'Record temperature and humidity on the pre-work checklist.', 'Stop and re-verify whenever the weather changes.'],
-    close: 'When in doubt, stop and ask the Quality Team before opening a joint. Related: Adverse Weather Pre-Work Checklist (QT-PTS-CHK-003).',
+    close: 'When in doubt, stop and ask the Quality Team before opening a joint. Related: Cable Joint Checklist (PP.PPS.PTS.QT.06).',
   },
 ];
 

@@ -20,25 +20,29 @@ TAQA Distribution brand. Static site, hosted on GitHub Pages.
 | `jointing-weather-conditions.html` | Jointing-in-weather guidance page |
 | `assets/styles.css` | Design system (TAQA colours, Roboto type) |
 | `assets/logo-dark.svg`, `assets/logo-white.png` | TAQA logo |
-| `documents/checklists/*.docx` | Inspection checklists |
+| `documents/checklists/*.docx` | Controlled Quality Team inspection checklists (supplied Word files) |
 | `documents/awareness/*.pdf` | Awareness Corner PDFs |
-| `gen_checklists.py`, `gen_pdfs.js` | Generators used to produce the downloadable documents |
+| `gen_pdfs.js`, `gen_handover.py` | Generators for the awareness PDFs and the IT handover document |
 
 ## Document register
 
-| Ref. | Title | Type | Last updated |
+| Ref. | Title | Type | Revision |
 |---|---|---|---|
-| QT-PTS-CHK-001 | LV & MV Cable Jointing Inspection Checklist | Word | 08 Jul 2026 |
-| QT-PTS-CHK-002 | Cable Laying & Backfilling Inspection Checklist | Word | 24 Jun 2026 |
-| QT-PTS-CHK-003 | Jointing in Adverse Weather — Pre-Work Checklist | Word | 12 Jul 2026 |
-| QT-PTS-CHK-004 | Substation Cable Termination Quality Checklist | Word | 02 Jul 2026 |
-| QT-PTS-QA-001 | Common Jointing Defects & How to Avoid Them | PDF | 05 Jul 2026 |
-| QT-PTS-QA-002 | Workmanship Standards for Cable Accessories | PDF | 28 Jun 2026 |
-| QT-PTS-QA-003 | Jointing in Weather Conditions — Field Guide | PDF | 12 Jul 2026 |
+| PP.PPS.PTS.QT.04 | Pre-execution & Trench Excavation Checklist | Word | Rev 1 · Mar 2025 |
+| PP.PPS.PTS.QT.05 | Cable Laying Checklist | Word | Rev 1 · Mar 2025 |
+| PP.PPS.PTS.QT.06 | Cable Joint Checklist | Word | Rev 1 · Mar 2025 |
+| PP.PPS.PTS.QT.06A | Cable Joint Guide — Uploading Pictures (Maximo) | Word | Rev 1 · Mar 2025 |
+| PP.PPS.PTS.QT.07 | Equipment Installation Checklist | Word | Rev 1 · Mar 2025 |
+| PP.PPS.PTS.QT.08 | Cable Termination Checklist | Word | Rev 1 · Mar 2025 |
+| QT-PTS-QA-001 | Common Jointing Defects & How to Avoid Them (awareness) | PDF | 05 Jul 2026 |
+| QT-PTS-QA-002 | Workmanship Standards for Cable Accessories (awareness) | PDF | 28 Jun 2026 |
+| QT-PTS-QA-003 | Jointing in Weather Conditions — Field Guide (awareness) | PDF | 12 Jul 2026 |
+
+*Checklists (QT.04–QT.08) are the controlled Quality Team documents. The three QA awareness PDFs are supporting good-practice material produced for the portal.*
 
 ## Notes
 
 - Contact emails and names are **placeholders** (`*@taqa.example`) — replace with the team's real details.
 - Document content is general Quality Team good-practice; it does not replace manufacturer instructions or the project specification.
 - Editing: change files here, then `git commit` and `git push` — GitHub Pages rebuilds automatically.
-- To regenerate the documents: `python gen_checklists.py` and `node gen_pdfs.js`.
+- The checklists are the Quality Team's controlled Word files (references `PP.PPS.PTS.QT.04`–`08`). To regenerate the awareness PDFs: `node gen_pdfs.js`.
