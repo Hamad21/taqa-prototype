@@ -213,6 +213,7 @@ section.block.soft { background: var(--bg-soft); }
 .card .meta { display: flex; align-items: center; gap: 12px; margin: 18px 0 16px; flex-wrap: wrap; }
 .pdf-badge { background: #fdecec; color: #d0342c; font-size: 11px; font-weight: 700; letter-spacing: .6px; padding: 3px 9px; border-radius: 4px; text-transform: uppercase; }
 .card .meta .ref { font-size: 12px; }
+.card .actions { display: flex; gap: 10px; flex-wrap: wrap; }
 
 /* ---- Jointing callout band --------------------------------------------- */
 .callout {
@@ -242,7 +243,7 @@ section.block.soft { background: var(--bg-soft); }
 
 /* ---- Contacts ----------------------------------------------------------- */
 .contact-lead {
-  display: grid; grid-template-columns: 1.1fr 1fr; gap: 26px; align-items: stretch; margin-bottom: 28px;
+  display: grid; grid-template-columns: 1fr; gap: 26px; margin-bottom: 28px;
 }
 .contact-hero {
   background: linear-gradient(120deg, var(--navy), #22317a); color: #fff; padding: 34px 34px;
@@ -257,10 +258,10 @@ section.block.soft { background: var(--bg-soft); }
 .email-box a:hover { color: var(--teal); }
 .note { background: #fff8e6; border: 1px solid #f4e2a8; color: #8a6d1a; border-radius: 8px; padding: 12px 16px; font-size: 13px; margin-top: 16px; }
 
-.people { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.people { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
 .person { border: 1px solid var(--line); border-radius: var(--radius); padding: 20px; background: #fff; box-shadow: var(--shadow-sm); }
 .person .role { font-size: 12px; text-transform: uppercase; letter-spacing: 1px; color: var(--teal-dark); font-weight: 700; }
-.person .pname { font-size: 17px; font-weight: 600; color: var(--navy); margin: 6px 0 2px; }
+.person .pname { font-size: 17px; font-weight: 600; color: var(--navy); margin: 6px 0 12px; }
 .person .scope { font-size: 13px; color: var(--muted); margin-bottom: 12px; }
 .person a.mail { display: inline-flex; align-items: center; gap: 8px; font-size: 14px; color: var(--purple); font-weight: 500; word-break: break-all; }
 .person a.mail svg { width: 15px; height: 15px; stroke: var(--purple); flex: 0 0 auto; }
@@ -323,7 +324,8 @@ section.block.soft { background: var(--bg-soft); }
 .menu-btn { display: none; }
 @media (max-width: 940px) {
   .tiles, .cards { grid-template-columns: 1fr 1fr; }
-  .callout, .guide, .contact-lead, .people, .dosdonts { grid-template-columns: 1fr; }
+  .callout, .guide, .dosdonts { grid-template-columns: 1fr; }
+  .people { grid-template-columns: 1fr 1fr; }
   .aside { position: static; }
   .site-footer .wrap { grid-template-columns: 1fr 1fr; }
 }

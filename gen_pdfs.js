@@ -18,7 +18,7 @@ const docs = [
     file: 'QT-PTS-QA-001_Common-Jointing-Defects.pdf',
     ref: 'QT-PTS-QA-001', date: '05 Jul 2026', rev: '1.2',
     title: 'Common Jointing Defects & How to Avoid Them',
-    intro: 'The Quality Team sees the same joint defects repeat across sites — and almost all of them are avoidable with basic discipline. Use this card in toolbox talks: know the defect, know the cause, build the habit that prevents it.',
+    intro: 'The Power Quality Team sees the same joint defects repeat across sites, and almost all of them are avoidable with basic discipline. Use this card in toolbox talks: know the defect, know the cause, build the habit that prevents it.',
     table: {
       head: ['Defect', 'Typical cause', 'How to avoid it'],
       rows: [
@@ -31,16 +31,16 @@ const docs = [
         ['Wrong / mismatched kit', 'Components picked without checking', 'Confirm the kit against cable type, size and voltage class before starting'],
       ],
     },
-    close: 'If a surface gets wet or dirty, or anything does not match the instruction — stop, correct it, and re-verify. When in doubt, call the Quality Team before closing the joint.',
+    close: 'If a surface gets wet or dirty, or anything does not match the instruction: stop, correct it, and re-verify. When in doubt, call the Power Quality Team before closing the joint.',
   },
   {
     file: 'QT-PTS-QA-002_Workmanship-Standards.pdf',
     ref: 'QT-PTS-QA-002', date: '28 Jun 2026', rev: '1.0',
     title: 'Workmanship Standards for Cable Accessories',
-    intro: 'What "good" looks like for LV and MV joints and terminations. These are the workmanship expectations the Quality Team checks against — build them into every job.',
+    intro: 'What "good" looks like for LV and MV joints and terminations. These are the workmanship expectations the Power Quality Team checks against. Build them into every job.',
     sections: [
       ['Cleanliness', ['Work in a clean, dry, enclosed environment.', 'Keep insulation and adhesive surfaces free of dust, oil and moisture.', 'Keep accessory packaging closed until the moment of use.']],
-      ['Tooling', ['Use the correct crimp tool and die for the connector.', 'Use calibrated tools where calibration is required.', 'Cut and strip with controlled, sharp tools — no nicks.']],
+      ['Tooling', ['Use the correct crimp tool and die for the connector.', 'Use calibrated tools where calibration is required.', 'Cut and strip with controlled, sharp tools; no nicks.']],
       ['Preparation', ['Set out preparation dimensions per the manufacturer instruction.', 'Make clean screen breaks; no damage to the conductor.']],
       ['Insulation & stress control', ['Build up insulation void-free with correct overlaps.', 'Position stress-control components exactly as specified.']],
       ['Connectors', ['Correct connector size for the conductor.', 'Correct crimp count; check alignment and inter-phase spacing.']],
@@ -52,8 +52,8 @@ const docs = [
   {
     file: 'QT-PTS-QA-003_Jointing-Weather-Field-Guide.pdf',
     ref: 'QT-PTS-QA-003', date: '12 Jul 2026', rev: '1.1',
-    title: 'Jointing in Weather Conditions — Field Guide',
-    intro: 'Heat, humidity, rain and dust all affect joint quality. The principle is simple: insulation surfaces must be clean, dry and at a controlled temperature at the moment the joint is closed. Use this go / no-go card on site — the manufacturer instruction and project specification always take precedence where stricter.',
+    title: 'Jointing in Weather Conditions: Field Guide',
+    intro: 'Heat, humidity, rain and dust all affect joint quality. The principle is simple: insulation surfaces must be clean, dry and at a controlled temperature at the moment the joint is closed. Use this go / no-go card on site. The manufacturer instruction and project specification always take precedence where stricter.',
     table: {
       head: ['Condition', 'Status', 'Control required'],
       status: 2,
@@ -68,7 +68,7 @@ const docs = [
       ],
     },
     controls: ['Erect and seal a jointing enclosure before opening any joint.', 'Keep surfaces clean and dry; warm or dehumidify where needed.', 'Record temperature and humidity on the pre-work checklist.', 'Stop and re-verify whenever the weather changes.'],
-    close: 'When in doubt, stop and ask the Quality Team before opening a joint. Related: Cable Joint Checklist (PP.PPS.PTS.QT.06).',
+    close: 'When in doubt, stop and ask the Power Quality Team before opening a joint. Related: Cable Joint Checklist (PP.PPS.PTS.QT.06).',
   },
 ];
 
@@ -136,7 +136,7 @@ h3.ctl { color: #00093f; font-size: 12px; text-transform: uppercase; letter-spac
   <div class="l">
     <div class="kicker">Quality Awareness Corner · Power Technical Support</div>
     <h1>${esc(d.title)}</h1>
-    <div class="sub">Quality Team — TAQA Distribution</div>
+    <div class="sub">Power Quality Team · TAQA Distribution</div>
   </div>
   <div class="r"><b>TAQA<br>DISTRIBUTION</b></div>
 </div>
@@ -182,8 +182,8 @@ async function main() {
     for (let i = 0; i < 60; i++) { if (events.some(e => e.method === 'Page.loadEventFired')) break; await sleep(120); }
     await sleep(500);
     const footer = `<div style="font-size:7px;color:#8a8c9c;width:100%;padding:0 15mm;display:flex;justify-content:space-between;font-family:Arial;">
-      <span>${d.ref} · Rev ${d.rev} · Last updated ${d.date} · Quality Team, Power Technical Support</span>
-      <span>Controlled — verify current revision · Page <span class="pageNumber"></span>/<span class="totalPages"></span></span></div>`;
+      <span>${d.ref} · Rev ${d.rev} · Last updated ${d.date} · Power Quality Team, Power Technical Support</span>
+      <span>Controlled document. Verify current revision · Page <span class="pageNumber"></span>/<span class="totalPages"></span></span></div>`;
     const res = await send('Page.printToPDF', {
       printBackground: true, preferCSSPageSize: true,
       displayHeaderFooter: true, headerTemplate: '<span></span>', footerTemplate: footer,
